@@ -5,6 +5,14 @@ This is a Cordova plugin to support the Dropbox Chooser on iOS and Android.  It 
 
 It is licensed under the MIT license - see the LICENSE file.
 
+Changes
+-------
+
+The plugin was upgraded to work in similar way than the Javascript one.  
+Details:  
+- Added "bytes" into the result  
+- New Dropbox Android Library  
+
 Prerequisites
 -------------
 
@@ -55,6 +63,8 @@ Please see the app.js file within Example/www/js for a code snippet example of h
 
 Authors
 -------
+
+Updated by Román A. Sarria.  https://github.com/sarriaroman
 
 Copyright (c) 2013, 2014 CV-Library Ltd.  http://www.cv-library.co.uk/
 

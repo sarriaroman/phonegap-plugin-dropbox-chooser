@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="uk.co.cv-library.plugins.DropboxChooser"
-    version="2.0.0">
+    version="2.0.1">
 
     <name>Dropbox Chooser</name>
     <author>CV-Library</author>
@@ -88,7 +88,8 @@
             </feature>
         </config-file>
         <source-file src="src/android/DropboxChooser.java" target-dir="src/uk/co/cv_library/plugins/" />
-        <source-file src="src/android/dropboxchoosersdk.jar" target-dir="libs" />
+
+		<framework src="src/android/DropboxChooserSDK" custom="true" />
     </platform>
     <info>
         This plugin will allow you to integrate the Dropbox Chooser into your iOS or Android app,

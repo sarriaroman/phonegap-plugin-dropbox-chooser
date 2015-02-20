@@ -32,8 +32,7 @@ public class DropboxChooser extends CordovaPlugin {
 
         if (action.equals("init")) {
                 dropboxAppId = args.getString(0);
-        }
-        else if (action.equals("launchDropboxChooser")) {
+        } else if (action.equals("launchDropboxChooser")) {
             context = callbackContext;
             cordova.setActivityResultCallback(DropboxChooser.this);
             mChooser = new DbxChooser(dropboxAppId);
@@ -42,15 +41,13 @@ public class DropboxChooser extends CordovaPlugin {
             previewLink = Boolean.valueOf(linkType);
 
             if (previewLink) {
-                mChooser.forResultType(DbxChooser.ResultType.PREVIEW_LINK)
-                                .launch(cordova.getActivity(), DBX_CHOOSER_REQUEST);
-            }
-            else {
-                    mChooser.forResultType(DbxChooser.ResultType.DIRECT_LINK)
-                                .launch(cordova.getActivity(), DBX_CHOOSER_REQUEST);
+                mChooser.forResultType(DbxChooser.ResultType.PREVIEW_LINK).launch(cordova.getActivity(), DBX_CHOOSER_REQUEST);
+            } else {
+                    mChooser.forResultType(DbxChooser.ResultType.DIRECT_LINK).launch(cordova.getActivity(), DBX_CHOOSER_REQUEST);
             }
             return true;
         }
+
         return false;
     }
 
@@ -65,6 +62,7 @@ public class DropboxChooser extends CordovaPlugin {
                     fileObj.put("name", result.getName());
                     fileObj.put("link", result.getLink().toString());
                     fileObj.put("icon", result.getIcon().toString());
+                    fileObj.put("bytes", result.getSize());
                 }
                 catch (JSONException e) {
                     Log.d("main", "Failed to stack file info onto obj: " + e.getCause());

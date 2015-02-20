@@ -29,6 +29,7 @@
                 [dictionary setObject:result.link.absoluteString forKey:@"link"];
                 [dictionary setObject:result.name forKey:@"name"];
                 [dictionary setObject:result.iconURL.absoluteString forKey:@"iconURL"];
+				[dictionary setObject:result.size forKey:@"bytes"];
                 [items addObject:dictionary];
             }
             pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsArray:items];
